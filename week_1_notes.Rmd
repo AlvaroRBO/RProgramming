@@ -1,0 +1,56 @@
+---
+title: "Beginings"
+author: "Al"
+date: "2026-01-06"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# R programming Course notes
+
+Following the first course beginings. They are telling me how to begin to understand the syntax of R. For example
+
+```{r}
+x <- 1 ## <- assignment of value to a variable. This line is assigning the value 1 to the variable x
+print(x) ## outputs in the terminal the value of x
+x ## Auto-prints the value of x
+
+msg <- "Hello" ## Assigning a string
+msg
+
+x <- 1:20 ## Creating a vector populated with the values from 1 to 20 in their respective positions.
+x
+```
+
+## Data Types
+
+R has 5 basic or "atomic" classes of objects:
+
+- character  
+- numeric  
+- integer  
+- complex  
+- logical (boolean)  
+
+## Objects 
+The most basic object is a vector
+
+- A vector can only contain objects of the same class  
+- *list* is a vector that can contain different classes  
+
+Empty vector is created by the vector() function.
+
+## Numbers
+
+Numbers in R are always treated as doubles. If you want an integer specifically you need to use the L suffix (ex. 1 is double, 1L is an integer). Inf is a special number which represents infinity. Also represented as (1/0). NaN represents an undefined value or missing number.
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
