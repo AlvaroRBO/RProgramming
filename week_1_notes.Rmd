@@ -47,10 +47,77 @@ Empty vector is created by the vector() function.
 
 Numbers in R are always treated as doubles. If you want an integer specifically you need to use the L suffix (ex. 1 is double, 1L is an integer). Inf is a special number which represents infinity. Also represented as (1/0). NaN represents an undefined value or missing number.
 
-You can also embed plots, for example:
+## Attributes
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+R objeccts can have attributes
+- names,dimnames  
+- dimensions  
+- class  
+- length  
+- other user-defined attributes/metadata  
+
+Attributes of an objeect can be accessed using the attributes() functions.
+
+## Creating Vectors
+
+The c() function can be used to create vectors of objects
+
+```{r}
+x <- c(.5,.6) ## numeric
+x
+x<- c(TRUE, TRUE) ## boolean
+x 
+x <- c(T,F)
+x
+x <- c("a","b","c")
+x
+x <- 9:29 ## integer
+x
+x <- c(1+0i,2+4i) ## Complex
+x
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+Or using the vector() function
+
+```{r}
+x <- vector("numeric", length = 10)
+x
+```
+
+What about mixing objects?
+
+```{r}
+y <- c(1.7,"a") ## char
+y
+y <- c(T,2) ##numeric
+y
+y<- c("a", TRUE) ##Char
+y
+```
+They get coerced to the common denominator class
+
+## Explicit coercion
+
+Whay if you want to coerced something instead of letting the machine assume it? You can use the as."" () function.
+
+```{r}
+x <- 0:6
+class(x)
+as.numeric(x)
+class(as.numeric(x))
+as.logical(x)
+as.character(x)
+```
+
+Nonsensical coercion results in NA s
+
+## List
+
+Vectors with different classes of opbjects
+
+```{r}
+x <- list(1,"a",TRUE,1+4i,2+0i)
+x
+```
+
+
